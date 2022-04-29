@@ -3,6 +3,7 @@ import 'package:mortgage_app/Screens/about_us.dart';
 import 'package:mortgage_app/Screens/feedback.dart';
 import 'package:mortgage_app/Screens/help.dart';
 import 'package:mortgage_app/Screens/home_screen.dart';
+import 'package:mortgage_app/Screens/what_is.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
@@ -35,38 +36,43 @@ class NavigationDrawerWidget extends StatelessWidget {
                       'assets/image/home_Image.png',
                     ),
                   ),
-                  // const SizedBox(height: 12),
+                  // const Sized1Box(height: 12),
                   // buildSearchField(),
                   const SizedBox(height: 24),
+                  // BUTTON OF HOME
                   buildMenuItem(
                     text: 'Home',
                     icon: Icons.home,
                     onClicked: () => selectedItem(context, 0),
                   ),
                   const SizedBox(height: 16),
+                  //BUTTION OF HELP
                   buildMenuItem(
                     text: 'Help',
                     icon: Icons.help,
                     onClicked: () => selectedItem(context, 1),
                   ),
                   const SizedBox(height: 16),
+                  //  BUTTON OF ABOUT US
                   buildMenuItem(
                     text: 'About Us',
                     icon: Icons.person,
                     onClicked: () => selectedItem(context, 2),
                   ),
                   const SizedBox(height: 16),
+                  //  BUTTON OF FEEDBACK
                   buildMenuItem(
-                    text: 'Feedback',
-                    icon: Icons.feedback,
+                    text: 'Rate US',
+                    icon: Icons.star,
                     onClicked: () => selectedItem(context, 3),
                   ),
-                  const SizedBox(height: 400),
-                  // Divider(color: Colors.white70),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 16),
+                  Divider(color: Colors.white70),
+                  const SizedBox(height: 16),
+                  //  WHAT IS MORTAGAGE BUTTON
                   buildMenuItem(
-                    text: 'Exit',
-                    icon: Icons.exit_to_app,
+                    text: 'What is Mortgage',
+                    icon: Icons.question_answer,
                     onClicked: () => selectedItem(context, 4),
                   ),
                   const SizedBox(height: 16),
@@ -163,6 +169,7 @@ class NavigationDrawerWidget extends StatelessWidget {
     );
   }
 
+// NAVIGATION OF DIFFRENT PAGES BY CLICK ON BUTTON IN NAVIGATION BUTTON
   void selectedItem(BuildContext context, int index) {
     Navigator.of(context).pop();
 
@@ -189,7 +196,7 @@ class NavigationDrawerWidget extends StatelessWidget {
         break;
       case 4:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => Help(),
+          builder: (context) => AboutMortgage(),
         ));
         break;
     }
